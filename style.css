@@ -24,3 +24,8 @@ input::-webkit-input-placeholder {
 button[disabled] {
   opacity: 0.5;
 }
+
+button,
+input {
+  outline: none !important;
+}
