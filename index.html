@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="p-4 hidden">
+      <div class="border py-2 px-4 rounded" id="bg">
+        <div class="text-center italic font-semibold" id="header">
+          <h1 id="title"></h1>
+        </div>
+        <h1 class="text-2xl font-semibold mb-5" style="color: #333333">
+          Registration
+        </h1>
+        <div method="post" class="flex flex-col justify-center">
+          <div class="mb-6 flex justify-between items-center">
+            <label class="text-sm" for="displayName">Display Name:</label>
+
+            <div class="rounded-xl">
+              <input
+                class="
+                  focus:border-blue-500
+                  appearance-none
+                  border
+                  rounded
+                  py-2
+                  px-4
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:bg-white
+                  hover:border-blue-500
+                  h-8
+                  transition-all
+                "
+                type="text"
+                id="displayName"
+                placeholder="e.g. John Doe"
+              />
+            </div>
+          </div>
+          <div class="mb-6 flex justify-between items-center">
+            <label class="text-sm" for="displayName"
+              >Private Identity
+              <span class="text-red-600 font-black">*</span>&nbsp;:</label
+            >
+
+            <div class="rounded-xl">
+              <input
+                class="
+                  focus:border-blue-500
+                  appearance-none
+                  border
+                  rounded
+                  py-2
+                  px-4
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:bg-white
+                  hover:border-blue-500
+                  h-8
+                  transition-all
+                "
+                type="text"
+                name="fullName"
+                id="privateIdentity"
+                placeholder="e.g. +33600000000"
+              />
+            </div>
+          </div>
+          <div class="mb-6 flex justify-between items-center">
+            <label class="text-sm" for="displayName"
+              >Public Identity
+              <span class="text-red-600 font-black">*</span>&nbsp;:</label
+            >
+
+            <div class="rounded-xl">
+              <input
+                class="
+                  focus:border-blue-500
+                  appearance-none
+                  border
+                  rounded
+                  py-2
+                  px-4
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:bg-white
+                  hover:border-blue-500
+                  h-8
+                  transition-all
+                "
+                type="text"
+                id="publicIdentity"
+                placeholder="e.g. sip:+33600000000@doubango.org"
+              />
+            </div>
+          </div>
+          <div class="mb-6 flex justify-between items-center">
+            <label class="text-sm" for="displayName">Password:</label>
+
+            <div class="rounded-xl">
+              <input
+                class="
+                  focus:border-blue-500
+                  appearance-none
+                  border
+                  rounded
+                  py-2
+                  px-4
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:bg-white
+                  hover:border-blue-500
+                  h-8
+                  transition-all
+                "
+                type="password"
+                id="password"
+                name="fullName"
+              />
+            </div>
+          </div>
+          <div class="mb-6 flex justify-between items-center">
+            <label class="text-sm" for="displayName">
+              Realm <span class="text-red-600 font-black">*</span>&nbsp;:</label
+            >
+
+            <div class="rounded-xl">
+              <input
+                class="
+                  focus:border-blue-500
+                  appearance-none
+                  border
+                  rounded
+                  py-2
+                  px-4
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:bg-white
+                  hover:border-blue-500
+                  h-8
+                  transition-all
+                "
+                type="text"
+                placeholder="e.g. doubango.org"
+                id="realm"
+              />
+            </div>
+          </div>
+          <div class="flex justify-end items-center">
+            <button
+              class="
+                transition-all
+                shadow
+                border border-green-500
+                bg-green-500
+                text-black
+                focus:shadow-outline focus:outline-none
+                py-1
+                px-3
+                rounded
+                text-white
+                mr-4
+                disabled:opacity-50
+              "
+              type="button"
+              id="logIn"
+            >
+              LogIn
+            </button>
+            <button
+              class="
+                transition-all
+                shadow
+                border border-red-500
+                bg-red-500
+                text-black
+                focus:shadow-outline focus:outline-none
+                py-1
+                px-3
+                rounded
+                text-white
+              "
+              id="logOut"
+              type="button"
+              disabled
+            >
+              LogOut
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="mb-4">
+            <span class="text-red-600 font-black">*</span>&nbsp;<i
+              >Mandatory Field</i
+            >
+          </div>
+          <div>
+            <button
+              class="
+                transition-all
+                shadow
+                border border-blue-500
+                bg-blue-500
+                text-black
+                focus:shadow-outline focus:outline-none
+                py-1
+                px-3
+                rounded
+                text-white
+                mr-4
+                disabled:opacity-50
+              "
+              type="button"
+            >
+              <a href="http://31.169.69.116/sipml5/expert.htm">Expert mode?</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full bg-red-500 h-screen" style="background: #355760;">
+      <div class=" relative" style="background: #32373b; height: 33.3%">
+        <div style="height:80%" class="p-4 flex justify-between">
+            <label class="text-gray-400">Call Transfer:&nbsp;<span class="font-semibold text-green-500 text-base">200 OK</span></label>
+            <div class="inline-block"><button   class="
+                transition-all
+                shadow
+                border border-blue-500
+                bg-blue-500
+                text-black
+                focus:shadow-outline focus:outline-none
+                py-1
+                px-3
+                rounded
+                text-white
+              " disabled>Transfer</button></div>
+        </div>
+        <div style="height:20%;color:#63b9c8" class="relative"><input type="text" pattern="[0-9 ]+" class="font-semibold text-xl h-full w-full bg-transparent py-4 px-10 text-center"/><i class="fas fa-times absolute"  style="right:1rem;top: 1.35rem"></i></div>
+      </div>
+      <div
+        class="grid grid-cols-3 grid-rows-4 text-white"
+        style="background: #355760; height: 68%"
+      >
+        <button value="1" class="focus:border-none outline-none">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+        <button id="microphone">
+            <i class="fa fa-microphone"></i>
+          </button>
+          <button value="0">0</button>
+          <button id="volume" class="flex items-center justify-center text-white">
+            <!-- <svg src="phone_hold.svg" alt="Kiwi standing on oval"></svg> -->
+            <svg fill="white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 3c-.55 0-1 .45-1 1v5c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1zm3 1v5c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1s-1 .45-1 1zm.23 11.26l-2.54-.29c-.61-.07-1.21.14-1.64.57l-1.84 1.84c-2.83-1.44-5.15-3.75-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52c-.12-1.01-.97-1.77-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07.53 8.54 7.36 15.36 15.89 15.89 1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98z"/><!-- Code injected by live-server -->
+                <script type="text/javascript">
+                    // <![CDATA[  <-- For SVG support
+                    if ('WebSocket' in window) {
+                        (function () {
+                            function refreshCSS() {
+                                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                                var head = document.getElementsByTagName("head")[0];
+                                for (var i = 0; i < sheets.length; ++i) {
+                                    var elem = sheets[i];
+                                    var parent = elem.parentElement || head;
+                                    parent.removeChild(elem);
+                                    var rel = elem.rel;
+                                    if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                        var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                        elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                                    }
+                                    parent.appendChild(elem);
+                                }
+                            }
+                            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                            var address = protocol + window.location.host + window.location.pathname + '/ws';
+                            var socket = new WebSocket(address);
+                            socket.onmessage = function (msg) {
+                                if (msg.data == 'reload') window.location.reload();
+                                else if (msg.data == 'refreshcss') refreshCSS();
+                            };
+                            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                                console.log('Live reload enabled.');
+                                sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                            }
+                        })();
+                    }
+                    else {
+                        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+                    }
+                    // ]]>
+                </script></svg>
+          </button>
+        </div>
+      </div>
+      <div style="background: #355760;">
+        <button
+          class="w-full"
+          style="
+            color: #fff;
+            border: 0;
+            outline: 0;
+            width: 100%;
+            padding: 1rem;
+            margin-top: -0.5rem;
+            font-size: 2rem;
+            background: #49c763;
+            border-radius: 50% 50% 0 0/30%;
+          "
+        >
+          <i class="fas fa-phone rotate-90 transform"></i>
+        </button>
+        <!-- <button
+          id="end-call"
+          class="w-full"
+          style="
+            color: #fff;
+            border: 0;
+            outline: 0;
+            width: 100%;
+            padding: 1rem;
+            margin-top: -0.5rem;
+            font-size: 2rem;
+            background: #c7495a;
+            border-radius: 50% 50% 0 0/30%;
+          "
+        >
+          <i class="fas fa-phone-slash"></i>
+        </button> -->
+      </div>
+    </div>
+    <script type="text/javascript" src="./app.js"></script>
+  </body>
+</html>
