@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="p-4" id="formContainer">
+      <div class="border py-2 px-4 rounded">
+        <div class="text-center italic font-semibold" id="header">
+          <h1 id="title"></h1>
+        </div>
+        <h1 class="text-2xl font-semibold mb-5" style="color: #333333">
+          Expert settings
+        </h1>
+        <div class="flex flex-col">
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName">Display Name:</label>
+
+            <input
+              class="
+                focus:border-blue-500
+                border
+                rounded
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:bg-white
+                hover:border-blue-500
+                transition-all
+              "
+              type="checkbox"
+              id="displayName"
+              placeholder="e.g. John Doe"
+            />
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >Enable RTCWeb Breaker<sup><a href="#aRTCWebBreaker">[1]</a></sup
+              >:</label
+            >
+
+            <input
+              class="
+                focus:border-blue-500
+                border
+                rounded
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:bg-white
+                hover:border-blue-500
+                transition-all
+              "
+              type="checkbox"
+              id="displayName"
+              placeholder="e.g. John Doe"
+            />
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >WebSocket Server URL<sup><a href="#aRTCWebBreaker">[2]</a></sup
+              >:</label
+            >
+
+            <input
+              class="
+                focus:border-blue-500
+                border
+                rounded
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:bg-white
+                hover:border-blue-500
+                transition-all
+                w-1/2
+              "
+              type="text"
+              id="displayName"
+              placeholder="e.g. ws://sipml5.org:5062"
+            />
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >SIP outbound Proxy URL<sup><a href="#aRTCWebBreaker">[3]</a></sup
+              >:</label
+            >
+
+            <input
+              class="
+                focus:border-blue-500
+                border
+                rounded
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:bg-white
+                hover:border-blue-500
+                transition-all
+                w-1/2
+              "
+              type="text"
+              id="displayName"
+              placeholder="e.g. udp://sipml5.org:5060"
+            />
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >ICE Servers<sup><a href="#aRTCWebBreaker">[4]</a></sup
+              >:</label
+            >
+
+            <input
+              class="
+                w-1/2
+                focus:border-blue-500
+                border
+                rounded
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:bg-white
+                hover:border-blue-500
+                transition-all
+              "
+              type="text"
+              id="displayName"
+              placeholder="e.g. [{ url: 'stun:stun.l.google.com:19302'}, { url:'turn:user@numb.viagenie.ca', credential:'myPassword'}]"
+            />
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >Max bandwidth (kbps)<sup><a href="#aRTCWebBreaker">[5]</a></sup
+              >:</label
+            >
+
+            <input
+              class="
+                w-1/2
+                focus:border-blue-500
+                border
+                rounded
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:bg-white
+                hover:border-blue-500
+                transition-all
+              "
+              type="text"
+              id="displayName"
+              placeholder="{ audio:64, video:512 }"
+            />
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >Video size<sup><a href="#aRTCWebBreaker">[6]</a></sup
+              >:</label
+            >
+
+            <input
+              class="
+                w-1/2
+                focus:border-blue-500
+                border
+                rounded
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:bg-white
+                hover:border-blue-500
+                transition-all
+              "
+              type="text"
+              id="displayName"
+              placeholder="{ minWidth: 640, minHeight:480, maxWidth: 640, maxHeight:480 }"
+            />
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >Disable 3GPP Early IMS<sup><a href="#aRTCWebBreaker">[7]</a></sup
+              >:</label
+            >
+
+            <div class="w-1/2">
+              <input
+                class="
+                  focus:border-blue-500
+                  border
+                  rounded
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:bg-white
+                  hover:border-blue-500
+                  transition-all
+                "
+                type="checkbox"
+                id="displayName"
+                placeholder="e.g. John Doe"
+              />
+            </div>
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >Disable debug messages<sup><a href="#aRTCWebBreaker">[8]</a></sup
+              >:</label
+            >
+
+            <div class="w-1/2">
+              <input
+                class="
+                  focus:border-blue-500
+                  border
+                  rounded
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:bg-white
+                  hover:border-blue-500
+                  transition-all
+                "
+                type="checkbox"
+                id="displayName"
+                placeholder="e.g. John Doe"
+              />
+            </div>
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >Cache the media stream<sup><a href="#aRTCWebBreaker">[9]</a></sup
+              >:</label
+            >
+
+            <div class="w-1/2">
+              <input
+                class="
+                  focus:border-blue-500
+                  border
+                  rounded
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:bg-white
+                  hover:border-blue-500
+                  transition-all
+                "
+                type="checkbox"
+                id="displayName"
+                placeholder="e.g. John Doe"
+              />
+            </div>
+          </div>
+          <div class="mb-6 flex items-center">
+            <label class="text-sm w-1/2" for="displayName"
+              >Disable Call button options<sup
+                ><a href="#aRTCWebBreaker">[10]</a></sup
+              >:</label
+            >
+            <div class="w-1/2">
+              <input
+                class="
+                  focus:border-blue-500
+                  border
+                  rounded
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:bg-white
+                  hover:border-blue-500
+                  transition-all
+                "
+                type="checkbox"
+                id="displayName"
+                placeholder="e.g. John Doe"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-end items-center">
+          <button
+            class="
+              transition-all
+              shadow
+              border border-green-500
+              bg-green-500
+              text-black
+              focus:shadow-outline focus:outline-none
+              py-1
+              px-3
+              rounded
+              text-white
+              disabled:opacity-50
+            "
+            type="button"
+            id="logIn"
+          >
+            LogIn
+          </button>
+        </div>
+        <div class="flex flex-col">
+          <div class="mb-4">
+            <span class="text-red-600 font-black">*</span>&nbsp;<i
+              >Mandatory Field</i
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

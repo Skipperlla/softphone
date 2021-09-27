@@ -5,7 +5,6 @@ const realm = document.querySelector("#realm");
 const madatory = document.querySelector("#madatory");
 const forbidden = document.querySelector("#forbidden");
 const logIn = document.querySelector("#logIn");
-const logOut = document.querySelector("#logOut");
 const header = document.querySelector("#header");
 const title = document.querySelector("#title");
 const bg = document.querySelector("#bg");
@@ -15,6 +14,10 @@ const holdLabel = document.querySelector("#holdLabel");
 const microphone = document.querySelector("#microphone");
 const call = document.querySelector("#call");
 const end_call = document.querySelector("#end-call");
+const phoneContainer = document.querySelector("#phoneContainer");
+const clearInput = document.querySelector("#clearInput");
+const formContainer = document.querySelector("#formContainer");
+const logOut = document.querySelector("#logOut");
 document.addEventListener("DOMContentLoaded", () => {
   const privateIdentityLS = localStorage.getItem("privateIdentity");
   const publicIdentityLS = localStorage.getItem("publicIdentity");
@@ -41,20 +44,15 @@ logIn.addEventListener("click", () => {
     title.textContent = "Connect";
     title.className = "text-green-600 ";
     logIn.setAttribute("disabled", "");
-    logOut.removeAttribute("disabled");
     localStorage.setItem("privateIdentity", privateIdentity.value);
     localStorage.setItem("publicIdentity", publicIdentity.value);
     localStorage.setItem("realm", realm.value);
     localStorage.setItem("password", password.value);
-    bg.classList.add("hidden");
+    phoneContainer.classList.remove("hidden");
+    formContainer.classList.add("hidden");
   }
 });
-logOut.addEventListener("click", () => {
-  title.textContent = "Disconnect";
-  title.className = "text-red-600 ";
-  logOut.setAttribute("disabled", "");
-  logIn.removeAttribute("disabled");
-});
+
 function myFunction(event) {
   console.log(event.target.value);
   telephoneInput.value += event.target.value;
@@ -83,11 +81,27 @@ microphone.addEventListener("click", () => {
 });
 
 call.addEventListener("click", () => {
-  call.classList.add("hidden");
-  end_call.classList.remove("hidden");
+  if (telephoneInput.value !== "") {
+    call.classList.add("hidden");
+    end_call.classList.remove("hidden");
+  }
 });
 
 end_call.addEventListener("click", () => {
   call.classList.remove("hidden");
   end_call.classList.add("hidden");
+  telephoneInput.value = "";
+});
+
+clearInput.addEventListener("click", () => {
+  if (end_call.classList.value.includes("hidden")) {
+    telephoneInput.value = "";
+  }
+});
+logOut.addEventListener("click", () => {
+  phoneContainer.classList.add("hidden");
+  formContainer.classList.remove("hidden");
+  logIn.removeAttribute("disabled");
+  title.textContent = "Disconnect";
+  title.className = "text-red-600 ";
 });
