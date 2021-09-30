@@ -18,6 +18,7 @@ const phoneContainer = document.querySelector("#phoneContainer");
 const clearInput = document.querySelector("#clearInput");
 const formContainer = document.querySelector("#formContainer");
 const logOut = document.querySelector("#logOut");
+
 document.addEventListener("DOMContentLoaded", () => {
   const privateIdentityLS = localStorage.getItem("privateIdentity");
   const publicIdentityLS = localStorage.getItem("publicIdentity");

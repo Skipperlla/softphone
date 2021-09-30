@@ -10,6 +10,11 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif; */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 #bg {
@@ -33,3 +38,4 @@ input {
 sup > a {
   color: #0088cc;
 }
+

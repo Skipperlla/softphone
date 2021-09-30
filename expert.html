@@ -22,7 +22,7 @@
     <div class="p-4" id="formContainer">
       <div class="border py-2 px-4 rounded">
         <div class="text-center italic font-semibold" id="header">
-          <h1 id="title"></h1>
+          <h1 id="expertTitle" class="text-red-500"></h1>
         </div>
         <h1 class="text-2xl font-semibold mb-5" style="color: #333333">
           Expert settings
@@ -281,26 +281,49 @@
             </div>
           </div>
         </div>
-        <div class="flex justify-end items-center">
-          <button
-            class="
-              transition-all
-              shadow
-              border border-green-500
-              bg-green-500
-              text-black
-              focus:shadow-outline focus:outline-none
-              py-1
-              px-3
-              rounded
-              text-white
-              disabled:opacity-50
-            "
-            type="button"
-            id="logIn"
-          >
-            LogIn
-          </button>
+        <div class="flex justify-end">
+          <div class="flex justify-end items-center mr-4">
+            <button
+              class="
+                transition-all
+                shadow
+                border border-green-500
+                bg-green-500
+                text-black
+                focus:shadow-outline focus:outline-none
+                py-1
+                px-3
+                rounded
+                text-white
+                disabled:opacity-50
+              "
+              type="button"
+              id="logIn"
+            >
+              Save
+            </button>
+          </div>
+          <div class="flex justify-end items-center">
+            <button
+              class="
+                transition-all
+                shadow
+                border border-red-500
+                bg-red-500
+                text-black
+                focus:shadow-outline focus:outline-none
+                py-1
+                px-3
+                rounded
+                text-white
+                disabled:opacity-50
+              "
+              type="button"
+              id="revert"
+            >
+              Revert
+            </button>
+          </div>
         </div>
         <div class="flex flex-col">
           <div class="mb-4">
@@ -311,5 +334,13 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      const expertTitle = document.querySelector("#expertTitle");
+      const revert = document.querySelector("#revert");
+
+      revert.addEventListener("click", () => {
+        expertTitle.textContent = "Reverted";
+      });
+    </script>
   </body>
 </html>
